@@ -1,0 +1,17 @@
+Negro:#000000:N
+Blanco:#FFFFFF:B
+Rojo:#FF0000:R
+Verde:#00FF00:V
+Azul:#0000FF:A
+Amarillo:#FFFF00:A1
+Rosa:#FFC0CB:R1
+Naranja:#FFA500:N1
+Morado:#800080:M
+Marron:#A52A2A:M1
+Gris:#808080:G
+Cyan:#00FFFF:C
+Magenta:#FF00FF:M2
+Oro:#FFD700:O
+Plateado:#C0C0C0:P
+Turquesa:#40E0D0:T
+
