@@ -1,11 +1,18 @@
 #!/bin/bash 
+
 clear
+
+#Programa que le pide al usuario n número de colores por parámetros, le da un menú 
+
 function comprobando(){
 	compro=0
 	numero=$((${#array[@]}+1))
 
-	#El letramayus lo uso para ponerlo en mayúscula porque sino el if me lo va hacer mal
-	#si lo pone en minúscula no lo ha hecho incorrecto
+	#Función que sirve para hacer la comprobación de que el usuario ha elegido las letras correctas del menú
+	#en caso de que no, se lo vuelve a pedir.
+
+	#El letramayus lo uso para ponerlo en mayúscula en caso de que el usuario no lo haya hecho
+	#porque sino el if me lo va hacer mal al comparar exactamente
 
 	for i in "${iniarray[@]}" ;do
 
@@ -98,6 +105,9 @@ done
 echo "Esta va a ser la lista de colores que tienes para asignar: "
 incre3=0
 
+#Este for te saca la lista de colores y la muestra por pantalla, además guarda en un array las iniciales equivalentes
+#a los colores que insertó el usuario
+
 for i in "${lista[@]}"; do
 
 	colors1=$(cat listacolores.txt | grep -i $i | cut -d ":" -f1,3)
@@ -108,9 +118,9 @@ for i in "${lista[@]}"; do
 
 done
 
-#Pregunta al usuario los colores y mete en variables (pag,div2,ctext2) la equivalencia del menú,
-#si le pongo R, el grep va a buscar la R y el primer campo que va a ser rojo
-#que es valor en el Array de asignación que contiene el hexadecimal
+#Pregunta al usuario los colores y mete en variables (pag,div2,ctext2) la equivalencia del menú.
+#Si le pongo R, el grep va a buscar la R y el primer campo que va a ser rojo
+#que es valor de la posición en el Array de asignación que contiene el hexadecimal
 
 read -p "¿De qué color quieres la página?: " pc1
 read -p "¿De qué color quieres el div?: " div
