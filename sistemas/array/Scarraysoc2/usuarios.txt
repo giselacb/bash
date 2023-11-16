@@ -1,0 +1,5 @@
+Isidoro:grupoisidoro:/home/personalisidoro:/bin/bash
+Leocadia:grupoleocadia:/home/personalleocadia:/bin/bash
+Eleuterio:grupoeleuterio:/home/personaleleuterio:/bin/bash
+Eulalia:grupoeulalia:/home/personaleulalia:/bin/bash
+Aureliano:grupoaureliano:/home/personalaureliano:/bin/bash
