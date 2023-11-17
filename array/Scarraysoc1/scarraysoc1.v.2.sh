@@ -14,7 +14,7 @@ for i in "$@" ; do
 		lista[$i]="$hexa"
 	else 
 		read -p "Mira chaval, tú y yo vamos a tener un problema y por chulo vas a tener que meter el hexadecimal tú: " hexa 
-		lita[$i]="$hexa"
+		lista[$i]="$hexa"
 	fi
 
 done
