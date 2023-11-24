@@ -4,16 +4,15 @@ function eu (){
 	se=$2
 
 	if [ $pri -gt $se ]; then
-		pri=$(($pri-$se)
+		pri=$(($pri-$se))
 		echo "$pri $se"
 		eu $pri $se
 	elif [ $se -gt $pri ]; then
 		se=$(($se-$pri))
 		echo "$pri $se"
 		eu $pri $se
-
 	else
-		echo "el máximo común divisor $se"
+		echo "el máximo común divisor es $se"
 	fi 
 
 }

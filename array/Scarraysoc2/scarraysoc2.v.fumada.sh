@@ -25,5 +25,7 @@ done
 
 
 
+for i in ${completo[@,"usuario"]}; do 
 
-echo "Todo ${usuarios[$2]} ${usuarios[$2,$3]}"
+	echo "$i"
+done
