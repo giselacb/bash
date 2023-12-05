@@ -1,5 +1,8 @@
 #!/bin/bash
+#Programa con función recursiva a la que le das 2 parámetros y te saca su máximo común divisor 
+
 function eu (){
+
 	pri=$1
 	se=$2
 
