@@ -25,9 +25,9 @@ numline=$(($numline-1))
 done
 }
 
-read -p "Si tiene un fichero ya creado con los usuarios pásemelo sino escriba 1" creafiche
+read -p "Si tiene un fichero ya creado con los usuarios pásemelo sino escriba 1: " creafiche
 
-if [ $creafiche -ne 1 ]; then
+if [ $creafiche -eq 1 ]; then
 	increcrea=0
 	read -p "¿Cuantos usuarios deseas ingresar: " numusu
 	while [ $numusu -gt $increcrea ]; do
@@ -44,20 +44,22 @@ else
 	mifuncion $creafiche
 fi
 
-read -p "Dime que deseas hacer con los usuarios, Crear (c), Borrar (b), Cambiar contraseña (cc), Información sobre ese usuario (info), añadirlo a un grupo (ag)" respu
+read -p "Dime que deseas hacer con los usuarios, Crear (c), Borrar (b), Cambiar contraseña (cc), Información sobre ese usuario (info), añadirlo a un grupo (ag): " respu
 
 respu_minus=$(echo "$respu" | tr '[:upper:]' '[:lower:]')
 
 case $respu_minus in
 
 	c)
-
+		echo "Creando los usuarios..."
 		aume=1
-		lineasfiche=$(cat $crearfiche | wc -l)
+		lineasfiche=$(cat $creafiche | wc -l)
+		##Este while tiene un fallo y es que no va a entrar si solo quieres hacer un usuario"
 		while [ $aume -ne $lineasfiche ]; do
 			usunom=$(cat $creafiche | head -n$aume | tail -n1 | cut -d ":" -f1)
 			grupousu=${usuarios[$usunom,grupo]}
-			existegru=$(cat /etc/groups | grep -w $grupousu | wc -l)
+			echo "$grupousu gropousuario"
+			existegru=$(cat /etc/group | grep -w $grupousu | wc -l)
 			if [ $existegru -ge 1 ]; then
 
 				sudo useradd -m -d ${usuarios[$usunom,carpeta]} -g ${usuarios[$usunom,grupo]} -s ${usuarios[$usunom,inter]} $usunom
@@ -92,4 +94,4 @@ case $respu_minus in
 
 	;;
 
-
+esac

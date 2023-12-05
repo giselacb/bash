@@ -1,0 +1,3 @@
+juancho:juanchogrupo:/home/juancho:/bin/bash
+joan:joangrupo:/home/joanpersonal:/bin/bash
+joan2:joan2grupo:/home/joanpersonal2:/bin/bash
