@@ -1,10 +1,11 @@
-#!/bin/bash 
+#!/bin/bash
 
 clear
 
 #Programa que le pide al usuario n número de colores por parámetros, le da un menú 
 
 function comprobando(){
+
 	compro=0
 	numero=$((${#array[@]}+1))
 
@@ -13,6 +14,8 @@ function comprobando(){
 
 	#El letramayus lo uso para ponerlo en mayúscula en caso de que el usuario no lo haya hecho
 	#porque sino el if me lo va hacer mal al comparar exactamente
+
+	#Comprueba de forma recursiva para que si se vuelve a equivocar vuelva a preguntarme
 
 	for i in "${iniarray[@]}" ;do
 
@@ -29,18 +32,20 @@ function comprobando(){
 
 			echo "No era tan difícil poner la segunda columna, otra oportunidad"
 			read -p "¿De qué color quieres la página?: " pc1
-
+			comprobando "$pc1" "pc1"
 		fi
 
 		if [ $compro -eq 0 ] && [[ "$2" == "div" ]];then 
 
 			echo "No era tan difícil poner la segunda columna, otra oportunidad"	
 			read -p "¿De qué color quieres el div?: " div
+			comprobando "$div" "div"
 
 		fi
 		if [ $compro -eq 0 ] && [[ "$2" == "ctext" ]];then 
 			echo "No era tan difícil poner la segunda columna, otra oportunidad"
 			read -p "¿De qué color quieres el texto?: " ctext
+			comprobando "$ctext" "ctext"
 		fi
 }
 
@@ -50,11 +55,10 @@ ip=$(ifconfig)
 declare -A lista
 declare -A array
 incre2=0
-p="p"
 
 #Este bucle lo que hace es que cuando encuentra que la primera letra es minúscula
 #la reemplaza por una mayúscula y guarda todo en un array, listaletra es una lista de
-#las letras en mayúscula y en minúscula
+#las letras en mayúscula y en minúscula, PODEMOS SIMPLIFICARLO BASTANTE
 
 for i in "$@" ; do
 
@@ -132,7 +136,7 @@ comprobando "$pc1" "pc1"
 comprobando "$div" "div"
 comprobando "$ctext" "ctext"
 
-#Esto hace que cuando el usuario meta R vaya a buscar su equivalencia de nombre de R y esa es la equivalencia 
+#Esto hace que cuando el usuario meta R vaya a buscar su equivalencia de nombre de R y esa es la equivalencia
 #en hexadecimal del array de asignación
 
 pag=$(cat listacolores.txt | grep -i $pc1$ | cut -d ":" -f1)

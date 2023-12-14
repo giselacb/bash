@@ -3,13 +3,21 @@
  <body> 
  <div> 
  <p> 
- eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 172.30.18.133  netmask 255.255.240.0  broadcast 172.30.31.255
-        inet6 fe80::215:5dff:fea2:1f4f  prefixlen 64  scopeid 0x20<link>
-        ether 00:15:5d:a2:1f:4f  txqueuelen 1000  (Ethernet)
-        RX packets 289  bytes 26426 (25.8 KiB)
+ docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:0a:38:ff:d5  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
         RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 23  bytes 1656 (1.6 KiB)
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.30.18.133  netmask 255.255.240.0  broadcast 172.30.31.255
+        inet6 fe80::215:5dff:fe03:68f5  prefixlen 64  scopeid 0x20<link>
+        ether 00:15:5d:03:68:f5  txqueuelen 1000  (Ethernet)
+        RX packets 1243  bytes 111479 (108.8 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 20  bytes 1458 (1.4 KiB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
 lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
