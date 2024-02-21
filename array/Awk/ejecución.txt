@@ -1,0 +1,4 @@
+Los contenedores en ejecución son: 
+CONTAINER ID
+873bc098d412 nginx:latest
+02:38:01 PM-01/17/2024
