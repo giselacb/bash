@@ -60,7 +60,7 @@ while getopts "x:a:c:v" option; do
 
 			#Visualiza el contenido del fichero tar que le pasemos, si pones sólo el nombre de la carpeta y está en otro sitio, la busca
 			carpeta="$OPTARG"
-			tar_exten 
+			tar_exten
 			ruta2=$(find / -name "$carpeta")
 			tar -tfv $ruta2
 
